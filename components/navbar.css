@@ -1,0 +1,24 @@
+.navbar-toggler-icon {
+  background-image: none !important;
+  padding: 0 !important;
+  width: 50px !important;
+  height: 50px !important;
+  /* background-image: url("../assets/nekoicon2.ico") !important; */
+}
+.navbar-toggler {
+  padding: 0 !important;
+  border: 1px solid black !important;
+}
+.navbar-toggler-icon img {
+  object-fit: fill !important;
+  min-width: 50px;
+  min-height: 50px;
+}
+.myImg {
+  width: 50px !important;
+}
+.mydiv img {
+  object-fit: fill !important;
+  min-width: 350px;
+  min-height: 350px;
+}

@@ -12,6 +12,7 @@
         if(password_verify($password, $row["password"])) {
           $_SESSION['id'] = $row['id'];
           $_SESSION['username'] = $row['username'];
+          $_SESSION['img_status'] = $row['img_status'];
           header("Location: home.php");
         }
         else {

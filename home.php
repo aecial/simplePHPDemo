@@ -10,6 +10,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HomePage</title>
+    <link rel="stylesheet" href="./components/navbar.css">
     <link rel="icon" type="image/x-icon" href="./assets/nekoIcon2.ico">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -29,24 +30,57 @@
     ></script>
   </head>
   <body>
+    <?php
+      include("./components/navbar.php");
+    ?>
     <div
       class="d-flex flex-column justify-content-center align-items-center my-auto min-vh-100"
     >
-      <h1>Hello <?php echo strtoupper($_SESSION['username']); ?></h1>
-      <div class="d-flex justify-content-center">
-        <img
-          src="./assets/logoutDemo.svg"
-          alt="Logout Picture" 
-          class="img-fluid"
-          width="450px"
-          height="450px"
-        />
+      
+      <div class="d-flex justify-content-center mydiv px-2">
+        <?php
+          if($_SESSION['img_status'] == 0) {
+            echo "<img
+            src='./assets/coolAvatar.svg'
+            alt='Logout Picture' 
+            class='img-fluid rounded-circle'
+            id='myPic'
+            width='450px'
+            height='450px'
+          />";
+          }
+          else {
+            include("database.php");
+            $id = $_SESSION['id'];
+            $sql = "SELECT * FROM users WHERE id='$id';";
+            $result = mysqli_query($conn, $sql);
+            if(mysqli_num_rows($result) > 0) {
+              while($row = mysqli_fetch_assoc($result)) {
+                $img_location = $row['img_location'];
+                echo "<img
+                src='".$img_location."'
+                alt='Logout Picture' 
+                class='img-fluid rounded-circle'
+                id='myPic'
+                width='450px'
+                height='450px'
+                ".mt_rand()."
+                />";
+              }
+            }
+            
+          }
+          
+        ?>
       </div>
-      <form action="logout.php" method="post">
-        <button type="submit" name="logout" class="btn btn-outline-danger">
-          LOGOUT
-        </button>
-      </form>
+      <h1> @<?php echo ($_SESSION['username']); ?></h1>
+      <form action="uploadPic.php" method="post" enctype='multipart/form-data' class="px-3">
+      <div class="input-group">
+        <input type="file" name="file" id="file" class="form-control" id="fileInput" onchange="change()">
+        <button type="submit" name="upload" class="btn btn-primary">Upload</button>
+      </div>
+    </form>
     </div>
+    <script src="picChange.js"></script>
   </body>
 </html>
