@@ -1,5 +1,0 @@
-.env
-/vendor
-.json
-.lock
-database.php
