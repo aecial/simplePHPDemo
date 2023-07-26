@@ -25,6 +25,7 @@ include("database.php");
           $resultLoc = mysqli_query($conn, $sqlLoc);
           $sqlstat = "UPDATE users SET img_status =1 WHERE id='{$_SESSION['id']}';";
           $resultstat = mysqli_query($conn, $sqlstat);
+          $_SESSION['img_status'] = 1;
         }
         else {
           echo "Maximum file size exceeded!";

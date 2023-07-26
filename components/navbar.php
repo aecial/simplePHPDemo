@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="#">Peysbuk</a>
+    <a class="navbar-brand fw-bold" href="#">
+      <img src="./assets/logo.png" alt="" srcset="" width="40px" height="40px">
+      Peysbuk
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon overflow-hidden p-0">
       <?php
@@ -34,11 +37,18 @@
       </span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav nav-underline text-end me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav text-end me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="home.php"><i class="fa-solid fa-house-chimney"></i> Home</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="home.php"><i class="fa-solid fa-clipboard-question"></i> About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="home.php"><i class="fa-solid fa-address-book"></i> Contact</a>
+        </li>
       </ul>
+      <hr>
       <form action="logout.php" method="post">
         <button type="submit" name="logout" class="btn btn-outline-danger float-end">
         <i class="fa-solid fa-person-walking-arrow-right"></i> LOGOUT
