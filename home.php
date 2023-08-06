@@ -1,4 +1,9 @@
 <?php
+  /*
+    Checks if someone is logged in by looking for an Id
+    If it does not exist, users will be sent back to the login page
+
+  */
   session_start();
   if(empty($_SESSION['id'])) {
     header("Location: index.php");
