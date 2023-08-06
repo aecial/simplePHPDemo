@@ -1,4 +1,5 @@
 <?php 
+  /*Checks if the username is already existing. If not, input the information to the database after hashing the password */
   if(isset($_POST['register'])) {
     include("database.php");
     $username = $_POST['username'];
@@ -98,6 +99,7 @@
             class="form-control fw-bold"
             placeholder="password"
             autocomplete="off"
+            required
           />
           <label for="password" class="fw-bold">Password</label>
         </div>
@@ -109,6 +111,7 @@
             class="form-control fw-bold"
             placeholder="confirm password"
             autocomplete="off"
+            required
           />
           <label for="conf_password" class="fw-bold">Confirm Password</label>
         </div>

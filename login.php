@@ -1,5 +1,10 @@
 <?php
   session_start();
+  /*
+    check if the username is existing in the database, if valid
+    the user's credential will be assigned to a SESSION superglobal variable and be relocated to the home page
+    else, the users will be redirected back to the login page
+  */
   if(isset($_POST['login'])) {
     include("database.php");
     $username = $_POST['username'];

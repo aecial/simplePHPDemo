@@ -46,6 +46,7 @@
             class="form-control"
             placeholder="Username"
             autocomplete="off"
+            required
           />
           <label for="username" class="fw-bold">Username</label>
         </div>
@@ -57,6 +58,7 @@
             class="form-control fw-semibold"
             placeholder="password"
             autocomplete="off"
+            required
           />
           <label for="password" class="fw-bold">Password</label>
         </div>

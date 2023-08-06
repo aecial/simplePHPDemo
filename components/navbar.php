@@ -7,6 +7,13 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon overflow-hidden p-0">
       <?php
+          /*
+            STATUS:
+              0 = not yet uploaded
+              1 = uploaded
+            Checks the status, if it is 0 the default picture will be shown in the profile
+            if its 1 their uploaded picture will be shown
+           */
           if($_SESSION['img_status'] == 0) {
             echo "<img
             src='./assets/coolAvatar.svg'
@@ -15,6 +22,7 @@
           />";
           }
           else {
+            // output the img by using image location in the database
             include("database.php");
             $id = $_SESSION['id'];
             $sql = "SELECT * FROM users WHERE id='$id';";
